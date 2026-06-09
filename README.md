@@ -1,2 +1,3 @@
-# PhotoPro AI V1.1
-Ứng dụng chỉnh ảnh PWA chạy trên iPhone: chọn ảnh thư viện, chụp ảnh, làm đẹp chân dung, tăng màu, tương phản, nét, khử nhiễu và lưu JPG.
+# PhotoPro AI V2 Professional
+
+Web app chỉnh ảnh chạy trên iPhone qua Safari/GitHub Pages. Ảnh được xử lý trong trình duyệt, không gửi lên máy chủ.
