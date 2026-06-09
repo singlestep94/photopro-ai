@@ -3,53 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>PhotoPro AI V1</title>
+  <title>PhotoPro AI V1.1</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#111827">
+  <meta name="theme-color" content="#0f172a">
 </head>
 <body>
-  <main class="app">
-    <header>
-      <div>
-        <h1>PhotoPro AI</h1>
-        <p>Chỉnh ảnh nhanh trên iPhone</p>
-      </div>
-      <button id="autoBtn" class="primary">Tự động</button>
-    </header>
+<main class="app">
+  <header class="top">
+    <div>
+      <h1>PhotoPro AI</h1>
+      <p>Chỉnh ảnh đẹp, tự nhiên trên iPhone</p>
+    </div>
+    <button id="autoBtn" class="primary">Tự động đẹp</button>
+  </header>
 
-    <section class="card upload"><input id="fileInput" type="file" accept="image/*" hidden>
-      <button id="pickBtn">Chọn / Chụp ảnh</button>
-      <button id="resetBtn">Đặt lại</button>
-    </section>
+  <section class="toolbar card">
+    <input id="fileInput" type="file" accept="image/*" hidden>
+    <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden>
+    <button id="pickBtn">Chọn ảnh từ thư viện</button>
+    <button id="cameraBtn">Chụp ảnh</button>
+    <button id="resetBtn">Đặt lại</button>
+  </section>
 
-    <section class="preview card">
-      <canvas id="canvas"></canvas>
-      <p id="hint">Hãy chọn ảnh để bắt đầu chỉnh sửa.</p>
-    </section>
+  <section class="preview card">
+    <canvas id="canvas"></canvas>
+    <p id="hint">Hãy chọn ảnh để bắt đầu chỉnh sửa.</p>
+  </section>
 
-    <section class="card controls">
-      <label>Sáng da <span id="brightVal">0</span></label>
-      <input id="brightness" type="range" min="-50" max="60" value="0">
+  <section class="presets card">
+    <button data-preset="portrait">Chân dung</button>
+    <button data-preset="fresh">Da sáng tự nhiên</button>
+    <button data-preset="vivid">Màu rực rỡ</button>
+    <button data-preset="clear">Ảnh nét trong</button>
+  </section>
 
-      <label>Mịn da <span id="smoothVal">0</span></label>
-      <input id="smooth" type="range" min="0" max="8" value="0">
+  <section class="card controls">
+    <label>Sáng tổng thể <span id="exposureVal">0</span></label>
+    <input id="exposure" type="range" min="-40" max="40" value="0">
+    <label>Sáng da / vùng tối <span id="skinVal">0</span></label>
+    <input id="skin" type="range" min="0" max="70" value="0">
+    <label>Mịn da <span id="smoothVal">0</span></label>
+    <input id="smooth" type="range" min="0" max="80" value="0">
+    <label>Màu sắc <span id="saturationVal">0</span></label>
+    <input id="saturation" type="range" min="-30" max="60" value="0">
+    <label>Tương phản <span id="contrastVal">0</span></label>
+    <input id="contrast" type="range" min="-30" max="50" value="0">
+    <label>Làm nét <span id="sharpVal">0</span></label>
+    <input id="sharpen" type="range" min="0" max="80" value="0">
+    <label>Khử nhiễu <span id="denoiseVal">0</span></label>
+    <input id="denoise" type="range" min="0" max="60" value="0">
+    <label>Ấm màu <span id="warmVal">0</span></label>
+    <input id="warm" type="range" min="-40" max="40" value="0">
+  </section>
 
-      <label>Màu sắc <span id="satVal">0</span></label>
-      <input id="saturation" type="range" min="-40" max="80" value="0">
+  <section class="card actions">
+    <button id="beforeBtn">Giữ để xem ảnh gốc</button>
+    <button id="saveBtn" class="primary">Lưu ảnh JPG chất lượng cao</button>
+  </section>
 
-      <label>Tương phản <span id="contrastVal">0</span></label>
-      <input id="contrast" type="range" min="-40" max="60" value="0">
-
-      <label>Làm nét <span id="sharpVal">0</span></label>
-      <input id="sharpen" type="range" min="0" max="5" value="0">
-    </section>
-
-    <section class="card actions">
-      <button id="saveBtn" class="primary">Lưu ảnh JPG</button>
-      <p class="note">Bản V1 xử lý trực tiếp trong Safari. Không gửi ảnh lên máy chủ.</p>
-    </section>
-  </main>
-  <script src="app.js"></script>
+  <p class="note">V1.1 xử lý trực tiếp trên iPhone, không gửi ảnh lên máy chủ. Để đẹp tự nhiên, nên dùng preset “Chân dung” rồi chỉnh nhẹ.</p>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
